@@ -2,12 +2,14 @@
 
 A utility script for osx, to convert a pdf file to eps format.
 
-# Requirements: 
+## Requirements: 
 Ghost Script 
+###Installation: 
+```bash
+$ brew install ghostscript
+```
 
-Installation: 
-'''$ brew install ghostscript
-
-#Usage: 
-'''$ pdf2eps source_pdf 
-
+##Usage: 
+```bash
+$ pdf2eps source_pdf 
+```
