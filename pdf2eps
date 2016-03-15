@@ -1,0 +1,19 @@
+#!/bin/bash
+
+convert (){
+  # get file name without extension, full path
+  b=`basename $1 .pdf`
+
+  full=$(cd "$(dirname "$1")"; pwd)
+  echo "Converting: $1 to:($full)"
+
+  ###  ghostscript
+  gs -dNOPAUSE -dBATCH -dSAFER -sDEVICE=eps2write -sOutputFile=${full}/${b}.eps -f $1
+}
+
+if [[ -f $1 ]]; then
+  convert $1
+else
+  echo "Usage: pdf2eps [PDF file]"
+  exit 1
+fi
